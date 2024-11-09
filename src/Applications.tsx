@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SingleApplication from "./SingleApplication";
 import styles from "./Applications.module.css";
 
-interface Application {
+export interface Application {
   id: string;
   loan_amount: number;
   first_name: string;
