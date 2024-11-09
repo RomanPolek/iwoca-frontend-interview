@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 
 import "./css/colors.css";
 import "./css/fonts.css";
+import "./css/tailwind-build.css";
 
 const rootContainer = document.getElementById("root");
 const root = createRoot(rootContainer);

@@ -9,6 +9,8 @@ const Applications = () => {
   return (
     <div className={styles.Applications}>
       <SingleApplication application={applications[0]} />
+      <SingleApplication application={applications[0]} />
+      <SingleApplication application={applications[0]} />
     </div>
   );
 };
