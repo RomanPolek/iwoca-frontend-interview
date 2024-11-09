@@ -39,8 +39,8 @@ const Applications = () => {
     }
 
     setLoading(true);
-    const response = await fetch(`http://localhost:3001/api/applications?_page=${page}&_limit=5`);
     try {
+      const response = await fetch(`http://localhost:3001/api/applications?_page=${page}&_limit=5`);
       const data = await response.json();
       if (data.length === 0) {
         setHasMore(false);
