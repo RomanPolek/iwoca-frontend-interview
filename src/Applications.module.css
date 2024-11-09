@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 5rem;
 }
 
 .loadMoreWrapper {
@@ -23,4 +24,20 @@
 
 .loadMore:hover {
   transform: scale(1.05);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
