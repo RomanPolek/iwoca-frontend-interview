@@ -3,3 +3,24 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.loadMore {
+  background-color: #0C2340;
+  color: white;
+  padding: 0.55rem 3.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.loadMore:hover {
+  transform: scale(1.05);
+}
