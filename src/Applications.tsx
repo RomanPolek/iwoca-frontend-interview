@@ -19,6 +19,7 @@ const Applications = () => {
   const [currentPage, setCurrentPage] = useState(0); //the last page loaded. 0 means no pages loaded
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
   /**
    * Fetches applications from the API at http://localhost:3001/api/applications
@@ -41,6 +42,10 @@ const Applications = () => {
     const response = await fetch(`http://localhost:3001/api/applications?_page=${page}&_limit=5`);
     try {
       const data = await response.json();
+      if (data.length === 0) {
+        setHasMore(false);
+      }
+
       setError(false);
       setCurrentPage(page);
       return data as Application[];
@@ -68,7 +73,7 @@ const Applications = () => {
       {loading && <div className={styles.loading}>Loading applications...</div>}
       {error && <div className={styles.error}>Error loading applications. Please try again later.</div>}
 
-      <div className={styles.loadMoreWrapper}>
+      {hasMore ? (<div className={styles.loadMoreWrapper}>
         <button className={styles.loadMore}
           onClick={() => {
             fetchApplications(currentPage + 1).then((newApplications) => {
@@ -76,7 +81,9 @@ const Applications = () => {
             });
           }}
         >Load more</button>
-      </div>
+      </div>) : (
+        <div className={styles.noMore}>There are no more applications to load. Please check back later.</div>
+      )}
     </div>
   );
 };
